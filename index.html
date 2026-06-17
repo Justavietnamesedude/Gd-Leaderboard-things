@@ -4,6 +4,41 @@
     <title>GD Leaderboard</title>
 
     <style>
+body {
+    background: #111827;
+    color: #e5e7eb;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h2 {
+    color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1f2937;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background: #2563eb;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #374151;
+}
+
+tr:hover {
+    background: #374151;
+}
+
 .player-link {
     color: #60a5fa;
     text-decoration: none;
@@ -15,8 +50,6 @@
     text-decoration: underline;
 }
 
-/* Difficulty badges */
-
 .badge {
     padding: 4px 10px;
     border-radius: 12px;
@@ -25,27 +58,12 @@
     color: white;
 }
 
-.extreme {
-    background: #dc2626; /* Red */
-}
-
-.insane {
-    background: #9333ea; /* Purple */
-}
-
-.hard {
-    background: #ea580c; /* Orange */
-}
-
-.medium {
-    background: #ca8a04; /* Yellow */
-}
-
-.easy {
-    background: #16a34a; /* Green */
-}
+.extreme { background: #dc2626; }
+.insane { background: #9333ea; }
+.hard { background: #ea580c; }
+.medium { background: #ca8a04; }
+.easy { background: #16a34a; }
 </style>
-    </style>
 </head>
 
 <body>
