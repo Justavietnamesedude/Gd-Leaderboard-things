@@ -1,307 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GD Leaderboard</title>
+<h2 class="section-title">Player Leaderboard</h2>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Segoe UI,Tahoma,Geneva,Verdana,sans-serif;
-}
+<table>
+    <thead>
+    <tr>
+        <th>Rank</th>
+        <th>Player</th>
+        <th>Hardest Demon</th>
+        <th>Difficulty</th>
+        <th>Points</th>
+        <th>Score</th>
+    </tr>
+    </thead>
 
-body{
-    background:#111827;
-    color:#ffffff;
-}
+    <tbody>
 
-header{
-    background:#0b1220;
-    border-bottom:2px solid #1f2937;
-    padding:20px;
-}
+    <tr>
+        <td>#1</td>
+        <td><a href="imtreejay.html" class="player-link">imTreeJay</a></td>
+        <td>Acu</td>
+        <td><span class="badge extreme">Extreme Demon</span></td>
+        <td>1430.65</td>
+        <td>297.92</td>
+    </tr>
 
-header h1{
-    text-align:center;
-    color:#60a5fa;
-}
+    <tr>
+        <td>#2</td>
+        <td><a href="smegma3.html" class="player-link">Smegma3</a></td>
+        <td>Experiment 204</td>
+        <td><span class="badge hard">Hard Demon</span></td>
+        <td>79.785</td>
+        <td>362.83</td>
+    </tr>
 
-nav{
-    margin-top:15px;
-    text-align:center;
-}
+    <tr>
+        <td>#3</td>
+        <td><a href="commanderx.html" class="player-link">CommanderX</a></td>
+        <td>Bloodbath</td>
+        <td><span class="badge extreme">Extreme Demon</span></td>
+        <td>77.18</td>
+        <td>358.15</td>
+    </tr>
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 15px;
-    font-weight:bold;
-}
+    <tr>
+        <td>#5</td>
+        <td><a href="tearai.html" class="player-link">Tearai</a></td>
+        <td>Future Funk</td>
+        <td><span class="badge hard">Hard Demon</span></td>
+        <td>35.24</td>
+        <td>149.59</td>
+    </tr>
 
-nav a:hover{
-    color:#60a5fa;
-}
+    <tr>
+        <td>#9</td>
+        <td><a href="sussy.html" class="player-link">Sussy</a></td>
+        <td>Depressure</td>
+        <td><span class="badge hard">Hard Demon</span></td>
+        <td>9.38</td>
+        <td>12.74</td>
+    </tr>
 
-.container{
-    width:95%;
-    max-width:1400px;
-    margin:auto;
-    padding:20px;
-}
+    <tr>
+        <td>#10</td>
+        <td><a href="asian.html" class="player-link">Asian</a></td>
+        <td>Super Cycles</td>
+        <td><span class="badge easy">Easy Demon</span></td>
+        <td>3.86</td>
+        <td>3.86</td>
+    </tr>
 
-.stats{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
-    margin-bottom:30px;
-}
-
-.stat-card{
-    background:#1f2937;
-    padding:20px;
-    border-radius:10px;
-    text-align:center;
-}
-
-.stat-card h2{
-    color:#60a5fa;
-}
-
-.section-title{
-    margin:25px 0 15px;
-    color:#60a5fa;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:#1f2937;
-    border-radius:10px;
-    overflow:hidden;
-}
-
-th{
-    background:#0f172a;
-    color:#60a5fa;
-}
-
-th,td{
-    padding:14px;
-    text-align:left;
-    border-bottom:1px solid #374151;
-}
-
-tr:hover{
-    background:#273449;
-}
-
-.badge{
-    padding:4px 10px;
-    border-radius:6px;
-    font-size:12px;
-    font-weight:bold;
-}
-
-.extreme{
-    background:#dc2626;
-}
-
-.insane{
-    background:#7c3aed;
-}
-
-.hard{
-    background:#ea580c;
-}
-
-.medium{
-    background:#2563eb;
-}
-
-.easy{
-    background:#16a34a;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:15px;
-    margin-top:20px;
-}
-
-.card{
-    background:#1f2937;
-    padding:20px;
-    border-radius:10px;
-}
-
-.card h3{
-    color:#60a5fa;
-    margin-bottom:10px;
-}
-
-footer{
-    text-align:center;
-    padding:25px;
-    margin-top:40px;
-    border-top:2px solid #1f2937;
-    color:#9ca3af;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-    <h1>GD Leaderboard</h1>
-
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Demon List</a>
-        <a href="#">Players</a>
-        <a href="#">Statistics</a>
-    </nav>
-</header>
-
-<div class="container">
-
-    <div class="stats">
-        <div class="stat-card">
-            <h2>6</h2>
-            <p>Players</p>
-        </div>
-
-        <div class="stat-card">
-            <h2>89</h2>
-            <p>Total Completions</p>
-        </div>
-
-        <div class="stat-card">
-            <h2>2</h2>
-            <p>Extreme Demons</p>
-        </div>
-
-        <div class="stat-card">
-            <h2>1430.65</h2>
-            <p>Highest Points</p>
-        </div>
-    </div>
-
-    <h2 class="section-title">Player Leaderboard</h2>
-
-    <table>
-        <thead>
-        <tr>
-            <th>Rank</th>
-            <th>Player</th>
-            <th>Hardest Demon</th>
-            <th>Difficulty</th>
-            <th>Points</th>
-            <th>Score</th>
-        </tr>
-        </thead>
-
-        <tbody>
-
-        <tr>
-            <td>#1</td>
-            <td><a href="imtreejay.html" style="color:#60a5fa;">imTreeJay</a></td>
-            <td>Acu</td>
-            <td><span class="badge extreme">Extreme Demon</span></td>
-            <td>1430.65</td>
-            <td>297.92</td>
-        </tr>
-
-        <tr>
-            <td>#2</td>
-            <td><a href="smegma3.html" style="color:#60a5fa;">Smegma3</a></td>
-            <td>Experiment 204</td>
-            <td><span class="badge hard">Hard Demon</span></td>
-            <td>79.785</td>
-            <td>362.83</td>
-        </tr>
-
-        <tr>
-            <td>#3</td>
-            <td><a href="commanderx.html" style="color:#60a5fa;">CommanderX</a></td>
-            <td>Bloodbath</td>
-            <td><span class="badge extreme">Extreme Demon</span></td>
-            <td>77.18</td>
-            <td>358.15</td>
-        </tr>
-
-        <tr>
-            <td>#5</td>
-            <td><a href="tearai.html" style="color:#60a5fa;">Tearai</a></td>
-            <td>Future Funk</td>
-            <td><span class="badge hard">Hard Demon</span></td>
-            <td>35.24</td>
-            <td>149.59</td>
-        </tr>
-
-        <tr>
-            <td>#9</td>
-            <td>Sussy</td>
-            <td>Depressure</td>
-            <td><span class="badge hard">Hard Demon</span></td>
-            <td>9.38</td>
-            <td>12.74</td>
-        </tr>
-
-        <tr>
-            <td>#10</td>
-            <td><a href="asian.html" style="color:#60a5fa;">Asian</a></td>
-            <td>Super Cycles</td>
-            <td><span class="badge easy">Easy Demon</span></td>
-            <td>3.86</td>
-            <td>3.86</td>
-        </tr>
-
-        </tbody>
-    </table>
-
-    <h2 class="section-title">Recent Top Completions</h2>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>#1 Bloodbath</h3>
-            <p>Player: CommanderX</p>
-            <p>Difficulty: Extreme Demon</p>
-            <p>Points: 23.99</p>
-        </div>
-
-        <div class="card">
-            <h3>#2 Acu</h3>
-            <p>Player: imTreeJay</p>
-            <p>Difficulty: Extreme Demon</p>
-            <p>Points: 20.25</p>
-        </div>
-
-        <div class="card">
-            <h3>#3 Windy Landscape</h3>
-            <p>Player: imTreeJay</p>
-            <p>Difficulty: Insane Demon</p>
-            <p>Points: 15.75</p>
-        </div>
-
-        <div class="card">
-            <h3>#4 Experiment 204</h3>
-            <p>Player: Smegma3</p>
-            <p>Difficulty: Hard Demon</p>
-            <p>Points: 12.04</p>
-        </div>
-
-    </div>
-
-</div>
-
-<footer>
-    GD Leaderboard • Community Demon Rankings
-</footer>
-
-</body>
-</html>
+    </tbody>
+</table>
