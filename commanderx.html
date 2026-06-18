@@ -1,15 +1,300 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Commander X</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Commander X - GD Leaderboard</title>
+
 <style>
-body{font-family:Arial,sans-serif;background:#142033;color:white;padding:20px;}
-.card{background:#223758;padding:20px;border-radius:10px;margin:10px 0;}
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#111;
+    color:white;
+}
+
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:220px;
+    height:100%;
+    background:#181818;
+    border-right:2px solid #333;
+    padding:20px;
+}
+
+.sidebar h2{
+    margin-top:0;
+    color:#ff4444;
+}
+
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin:10px 0;
+}
+
+.sidebar a:hover{
+    color:#ff4444;
+}
+
+.main{
+    margin-left:260px;
+    padding:30px;
+}
+
+.profile-header{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.rank-badge{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    background:gold;
+    color:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:36px;
+    font-weight:bold;
+}
+
+.player-info h1{
+    margin:0;
+    font-size:42px;
+}
+
+.player-info p{
+    margin:5px 0;
+    color:#bbb;
+}
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.card{
+    background:#1b1b1b;
+    border:1px solid #333;
+    border-radius:10px;
+    padding:20px;
+    min-width:200px;
+}
+
+.card h3{
+    margin-top:0;
+    color:#ff5555;
+}
+
+.progress-section{
+    margin-bottom:35px;
+}
+
+.progress-bar{
+    width:100%;
+    background:#333;
+    border-radius:8px;
+    overflow:hidden;
+    height:25px;
+}
+
+.progress-fill{
+    height:100%;
+    background:#ff4444;
+}
+
+.section{
+    margin-top:35px;
+}
+
+.section h2{
+    border-bottom:2px solid #333;
+    padding-bottom:10px;
+}
+
+.demon-list{
+    columns:2;
+}
+
+.demon-list li{
+    margin-bottom:8px;
+}
+
+.extreme{
+    color:#6e0101;
+    font-weight:bold;
+}
+
+.insane{
+    color:#bb0101;
+    font-weight:bold;
+}
+
+.hard{
+    color:#fd342f;
+    font-weight:bold;
+}
+
+.medium{
+    color:#d243ff;
+    font-weight:bold;
+}
+
+.easy{
+    color:#9a44ff;
+    font-weight:bold;
+}
+
+.main-demon{
+    color:#a100a1;
+    font-weight:bold;
+}
+
+@media(max-width:900px){
+
+.sidebar{
+    position:relative;
+    width:auto;
+    height:auto;
+}
+
+.main{
+    margin-left:0;
+}
+
+.demon-list{
+    columns:1;
+}
+
+}
 </style>
 </head>
+
 <body>
-<h1>Commander X</h1>
-<div class="card">hi</div>
+
+<div class="sidebar">
+    <h2>GD Leaderboard</h2>
+
+    <a href="index.html">Leaderboard</a>
+    <a href="imtreejay.html">imTreeJay</a>
+    <a href="commanderx.html">Commander X</a>
+    <a href="smegma3.html">Smegma3</a>
+    <a href="tearai.html">Tearai</a>
+    <a href="asian.html">Asian</a>
+    <a href="sussy.html">Sussyrizz</a>
+</div>
+
+<div class="main">
+
+    <div class="profile-header">
+
+        <div class="rank-badge">
+            #1
+        </div>
+
+        <div class="player-info">
+            <h1>Commander X</h1>
+            <p>Current #1 Ranked Player</p>
+            <p>Hardest Demon: <span class="extreme">Bloodbath</span></p>
+        </div>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Score</h3>
+            <h1>109.04</h1>
+        </div>
+
+        <div class="card">
+            <h3>Points</h3>
+            <h1>109.04</h1>
+        </div>
+
+        <div class="card">
+            <h3>Hardest Demon</h3>
+            <h1 class="extreme">Bloodbath</h1>
+        </div>
+
+    </div>
+
+    <div class="progress-section">
+        <h2>Leaderboard Progress</h2>
+
+        <div class="progress-bar">
+            <div class="progress-fill" style="width:100%"></div>
+        </div>
+
+        <p>109.04 / 109.04 Points</p>
+    </div>
+
+    <div class="section">
+        <h2>Extreme Demons</h2>
+
+        <ul class="demon-list">
+            <li class="extreme">Bloodbath</li>
+            <li class="extreme">Red World</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Hard Demons</h2>
+
+        <ul class="demon-list">
+            <li class="hard">Fairydust</li>
+            <li class="hard">Water Temple</li>
+            <li class="hard">Fire Temple</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Medium Demons</h2>
+
+        <ul class="demon-list">
+            <li class="medium">B</li>
+            <li class="medium">Ode to Sunset</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Easy Demons</h2>
+
+        <ul class="demon-list">
+            <li class="easy">Electroman Adven v2</li>
+            <li class="easy">iSpyWithMyLittleEye</li>
+            <li class="easy">Square Dash</li>
+            <li class="easy">Xstep v2</li>
+            <li class="easy">The Farewell</li>
+            <li class="easy">Permafrost Mountain</li>
+            <li class="easy">Shiver</li>
+            <li class="easy">Platinum Adventure</li>
+            <li class="easy">The Lightning Road</li>
+            <li class="easy">The Nightmare</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Main Level Demons</h2>
+
+        <ul class="demon-list">
+            <li class="main-demon">Deadlocked</li>
+            <li class="main-demon">Theory of Everything 2</li>
+        </ul>
+    </div>
+
+</div>
+
 </body>
 </html>
+```
