@@ -3,242 +3,318 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GD Leaderboard</title>
+<title>imTreeJay - GD Profile</title>
 
 <style>
 body{
     margin:0;
-    font-family:Arial, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:#111;
     color:white;
 }
 
-/* Header */
-header{
+/* Sidebar */
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:220px;
+    height:100%;
+    background:#181818;
+    border-right:2px solid #333;
     padding:20px;
-    text-align:center;
-    background:#1a1a1a;
-    font-size:24px;
-    font-weight:bold;
+    box-sizing:border-box;
+}
+
+.sidebar h2{
+    margin-top:0;
     color:#ffd700;
 }
 
-/* Leaderboard container */
-.container{
-    padding:20px;
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin:10px 0;
 }
 
-/* Player cards */
-.card{
-    background:#1a1a1a;
-    padding:20px;
-    margin:15px 0;
-    border-radius:12px;
+.sidebar a:hover{
+    color:#ffd700;
 }
 
-/* Rank badge */
-.rank{
-    display:inline-block;
-    background:#ffd700;
+/* Main */
+.main{
+    margin-left:260px;
+    padding:30px;
+}
+
+/* Header */
+.profile-header{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.rank-badge{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    background:gold;
     color:black;
-    padding:6px 12px;
-    border-radius:8px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:36px;
     font-weight:bold;
 }
 
-/* Difficulty colors (YOUR SETTINGS) */
-.extreme { color:#6e0101; }
-.insane { color:#bb0101; }
-.hard { color:#fd342f; }
-.medium { color:#d243ff; }
-.easy { color:#9a44ff; }
-.roptop { color:#a100a1; }
-
-/* Breakdown list */
-ul{
-    columns:2;
-    padding-left:20px;
+.player-info h1{
+    margin:0;
+    font-size:42px;
 }
 
-/* small text */
-small{opacity:0.8;}
+.player-info p{
+    margin:5px 0;
+    color:#bbb;
+}
+
+/* Cards */
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:30px;
+}
+
+.card{
+    background:#1b1b1b;
+    border:1px solid #333;
+    border-radius:10px;
+    padding:20px;
+    min-width:200px;
+}
+
+.card h3{
+    margin-top:0;
+    color:#ffd700;
+}
+
+/* Progress */
+.progress-section{
+    margin-bottom:35px;
+}
+
+.progress-bar{
+    width:100%;
+    background:#333;
+    border-radius:8px;
+    overflow:hidden;
+    height:25px;
+}
+
+.progress-fill{
+    height:100%;
+    background:#ffd700;
+}
+
+/* Sections */
+.section{
+    margin-top:35px;
+}
+
+.section h2{
+    border-bottom:2px solid #333;
+    padding-bottom:10px;
+}
+
+.demon-list{
+    columns:2;
+}
+
+.demon-list li{
+    margin-bottom:8px;
+}
+
+/* Difficulty Colors */
+.extreme { color:#6e0101; font-weight:bold; }
+.insane  { color:#bb0101; font-weight:bold; }
+.hard    { color:#fd342f; font-weight:bold; }
+.medium  { color:#d243ff; font-weight:bold; }
+.easy    { color:#9a44ff; font-weight:bold; }
+.main-demon { color:#a100a1; font-weight:bold; }
+
+/* Mobile */
+@media(max-width:900px){
+.sidebar{
+    position:relative;
+    width:auto;
+    height:auto;
+}
+
+.main{
+    margin-left:0;
+}
+
+.demon-list{
+    columns:1;
+}
+}
 </style>
 </head>
 
 <body>
 
-<header>Geometry Dash Global Leaderboard</header>
+<div class="sidebar">
+    <h2>GD Leaderboard</h2>
+    <a href="index.html">Leaderboard</a>
+    <a href="imtreejay.html">imTreeJay</a>
+    <a href="commanderx.html">Commander X</a>
+    <a href="smegma3.html">Smegma3</a>
+    <a href="tearai.html">Tearai</a>
+    <a href="asian.html">Asian</a>
+</div>
 
-<div class="container" id="app"></div>
+<div class="main">
 
-<script>
+    <div class="profile-header">
 
-// -----------------------------
-// LEVEL DATABASE
-// -----------------------------
-const levels = [
-{title:"Bloodbath",difficulty:"Extreme Demon",score:109.04,beater:"Commander X"},
-{title:"Acu",difficulty:"Extreme Demon",score:77.33,beater:"imTreeJay"},
-{title:"Red World",difficulty:"Extreme Demon",score:76.85,beater:"Commander X"},
-{title:"Windy Landscape",difficulty:"Insane Demon",score:63.77,beater:"imTreeJay"},
-{title:"Magma Bound",difficulty:"Insane Demon",score:63.74,beater:"imTreeJay"},
-{title:"CraZy II",difficulty:"Insane Demon",score:62.5,beater:"imTreeJay"},
-{title:"Fairydust",difficulty:"Hard Demon",score:57.49,beater:"imTreeJay and CommanderX"},
-{title:"Future Funk",difficulty:"Hard Demon",score:54.53,beater:"imTreeJay and Tearai"},
-{title:"Experiment 204",difficulty:"Hard Demon",score:51.14,beater:"Smegma3"},
-{title:"Water Temple",difficulty:"Hard Demon",score:47.91,beater:"Commander X"},
-{title:"Nine Circles",difficulty:"Hard Demon",score:47.57,beater:"imTreeJay and Tearai"},
-{title:"Jawbreaker",difficulty:"Hard Demon",score:47.49,beater:"imTreeJay and Tearai"},
-{title:"Troll Madness",difficulty:"Hard Demon",score:39.7,beater:"imTreeJay"},
-{title:"Fire Temple",difficulty:"Medium Demon",score:41.8,beater:"Commander X"},
-{title:"Darkness Keeper",difficulty:"Hard Demon",score:41.46,beater:"Smegma3"},
-{title:"VeritY",difficulty:"Medium Demon",score:36.68,beater:"imTreeJay"},
-{title:"Skeletal Shenanigans",difficulty:"Medium Demon",score:36.23,beater:"imTreeJay"},
-{title:"Zom B",difficulty:"Medium Demon",score:36.15,beater:"imTreeJay"},
-{title:"Paracosm Circles",difficulty:"Medium Demon",score:35.12,beater:"imTreeJay"},
-{title:"B",difficulty:"Medium Demon",score:34.74,beater:"Smegma3 and Commander X and imTreeJay"},
-{title:"Cryostatic",difficulty:"Medium Demon",score:33.65,beater:"imTreeJay"},
-{title:"Zip Zoom",difficulty:"Medium Demon",score:33.63,beater:"imTreeJay"},
-{title:"Living Open",difficulty:"Medium Demon",score:33.47,beater:"imTreeJay"},
-{title:"Sidestep",difficulty:"Easy Demon",score:33.44,beater:"imTreeJay"},
-{title:"Clubstep 2019",difficulty:"Medium Demon",score:33.38,beater:"Smegma3"},
-{title:"Neon City",difficulty:"Medium Demon",score:33.19,beater:"imTreeJay"},
-{title:"Theory of Jumping",difficulty:"Medium Demon",score:32.62,beater:"imTreeJay"},
-{title:"Deadlocked",difficulty:"Roptop Demon",score:32.47,beater:"Smegma3 and Commander X and imTreeJay"},
-{title:"Extinction",difficulty:"Easy Demon",score:30.42,beater:"imTreeJay"},
-{title:"DeCode",difficulty:"Easy Demon",score:29.75,beater:"imTreeJay"},
-{title:"Traction",difficulty:"Easy Demon",score:29.12,beater:"imTreeJay"},
-{title:"Death Moon",difficulty:"Easy Demon",score:27.68,beater:"imTreeJay"},
-{title:"Ode to Sunset",difficulty:"Medium Demon",score:25.14,beater:"Commander X"},
-{title:"Problematic",difficulty:"Easy Demon",score:22.73,beater:"imTreeJay"},
-{title:"X",difficulty:"Easy Demon",score:22.65,beater:"imTreeJay"},
-{title:"Theory of Everything 2",difficulty:"Roptop Demon",score:21.99,beater:"Smegma3 and Commander X and imTreeJay"},
-{title:"Retro Circles",difficulty:"Easy Demon",score:20.7,beater:"imTreeJay and Smegma3"},
-{title:"Clubstep",difficulty:"Roptop Demon",score:20.07,beater:"Smegma3 and imTreeJay"},
-{title:"Submerged",difficulty:"Easy Demon",score:19.89,beater:"imTreeJay"},
-{title:"Ruined Planet",difficulty:"Easy Demon",score:19.89,beater:"imTreeJay"},
-{title:"Clutterfunk v2",difficulty:"Easy Demon",score:18.58,beater:"imTreeJay"},
-{title:"Invisible Clubstep",difficulty:"Easy Demon",score:18.1,beater:"imTreeJay and Smegma3"},
-{title:"Depressure",difficulty:"Hard Demon",score:12.74,beater:"imTreeJay and Smegma3"},
-{title:"Shanty",difficulty:"Easy Demon",score:12.06,beater:"imTreeJay"},
-{title:"Sky Realm",difficulty:"Easy Demon",score:11.79,beater:"imTreeJay"},
-{title:"Speed of Light",difficulty:"Easy Demon",score:13.14,beater:"Smegma3"},
-{title:"Ultra Paracosm",difficulty:"Easy Demon",score:10.94,beater:"imTreeJay"},
-{title:"PXTTXRN SXXKXR",difficulty:"Easy Demon",score:10.94,beater:"imTreeJay"},
-{title:"Theory of Every v2",difficulty:"Easy Demon",score:10.66,beater:"imTreeJay"},
-{title:"Infinite Circles",difficulty:"Easy Demon",score:9.93,beater:"imTreeJay"},
-{title:"RECLUSE",difficulty:"Easy Demon",score:10.08,beater:"imTreeJay"},
-{title:"Super Cycles",difficulty:"Easy Demon",score:9.48,beater:"Asian"},
-{title:"Electroman Adven v2",difficulty:"Easy Demon",score:9.18,beater:"Commander X"},
-{title:"Blue Hell",difficulty:"Easy Demon",score:9.03,beater:"imTreeJay"},
-{title:"Hold On",difficulty:"Easy Demon",score:9.03,beater:"imTreeJay"},
-{title:"Equinox",difficulty:"Easy Demon",score:9.03,beater:"imTreeJay"},
-{title:"iSpyWithMyLittleEye",difficulty:"Easy Demon",score:8.41,beater:"Smegma3 and Commander X and imTreeJay"},
-{title:"TheRealSalad",difficulty:"Easy Demon",score:8.26,beater:"imTreeJay and Smegma3"},
-{title:"yStep",difficulty:"Easy Demon",score:7.46,beater:"imTreeJay"},
-{title:"Crescendo",difficulty:"Easy Demon",score:7.46,beater:"imTreeJay and Smegma3"},
-{title:"Square Dash",difficulty:"Easy Demon",score:7.3,beater:"Commander X and imTreeJay"},
-{title:"STRANDED",difficulty:"Easy Demon",score:7.3,beater:"imTreeJay"},
-{title:"Impulse",difficulty:"Easy Demon",score:7.3,beater:"imTreeJay"},
-{title:"Xstep v2",difficulty:"Easy Demon",score:6.98,beater:"Smegma3 and Commander X and imTreeJay"},
-{title:"The Farewell",difficulty:"Easy Demon",score:6.48,beater:"Smegma3 and Commander X"},
-{title:"ClubstepDynamix",difficulty:"Easy Demon",score:4.6,beater:"Smegma3"},
-{title:"Lights And Thunder",difficulty:"Easy Demon",score:4.06,beater:"imTreeJay and Smegma3"},
-{title:"Permafrost Mountain",difficulty:"Easy Demon",score:3.88,beater:"Commander X and imTreeJay"},
-{title:"Level",difficulty:"Easy Demon",score:3.33,beater:"imTreeJay"},
-{title:"Locomomentum",difficulty:"Easy Demon",score:1.42,beater:"Smegma3"},
-{title:"Petal Patch",difficulty:"Easy Demon",score:1.39,beater:"imTreeJay"},
-{title:"Down Unda",difficulty:"Easy Demon",score:1.35,beater:"imTreeJay"},
-{title:"iS",difficulty:"Easy Demon",score:1.24,beater:"imTreeJay and Smegma3"},
-{title:"Subterra",difficulty:"Easy Demon",score:1.23,beater:"imTreeJay"},
-{title:"phjork",difficulty:"Easy Demon",score:1.06,beater:"imTreeJay"},
-{title:"red alert",difficulty:"Easy Demon",score:0.99,beater:"imTreeJay"},
-{title:"Shiver",difficulty:"Easy Demon",score:0.92,beater:"Smegma3 and Commander X and imTreeJay"},
-{title:"Demon Jumper",difficulty:"Easy Demon",score:0.92,beater:"imTreeJay and Smegma3"},
-{title:"Interlapse",difficulty:"Easy Demon",score:0.92,beater:"imTreeJay"},
-{title:"Unite",difficulty:"Easy Demon",score:0.88,beater:"Smegma3"},
-{title:"Platinum Adventure",difficulty:"Easy Demon",score:0.85,beater:"Smegma3 and Commander X and imTreeJay"},
-{title:"XYZstep",difficulty:"Easy Demon",score:0.77,beater:"Smegma3"},
-{title:"Demon Mixed",difficulty:"Easy Demon",score:0.74,beater:"imTreeJay and Smegma3"},
-{title:"Sea Hunter",difficulty:"Easy Demon",score:0.55,beater:"Smegma3"},
-{title:"The Lightning Road",difficulty:"Easy Demon",score:0.55,beater:"Smegma3 and Commander X and imTreeJay"},
-{title:"The Nightmare",difficulty:"Easy Demon",score:0.51,beater:"Smegma3, Commander X, Asian and imTreeJay"}
-];
+        <div class="rank-badge">#1</div>
 
-// -----------------------------
-// HELPERS
-// -----------------------------
-function splitPlayers(str){
-    return str.split(/and|,/).map(s=>s.trim()).filter(Boolean);
-}
+        <div class="player-info">
+            <h1>imTreeJay</h1>
+            <p>Current #1 Ranked Player</p>
+            <p>Hardest Demon: <span class="extreme">Acu</span></p>
+        </div>
 
-function getDifficultyClass(diff){
-    if(diff.includes("Extreme")) return "extreme";
-    if(diff.includes("Insane")) return "insane";
-    if(diff.includes("Hard")) return "hard";
-    if(diff.includes("Medium")) return "medium";
-    if(diff.includes("Easy")) return "easy";
-    return "roptop";
-}
+    </div>
 
-// -----------------------------
-// AGGREGATE DATA
-// -----------------------------
-const players = {};
+    <div class="cards">
 
-for(const lvl of levels){
-    const beaters = splitPlayers(lvl.beater);
+        <div class="card">
+            <h3>Score</h3>
+            <h1>308.755</h1>
+        </div>
 
-    for(const p of beaters){
-        if(!players[p]){
-            players[p] = {
-                score:0,
-                list:[]
-            };
-        }
-        players[p].score += lvl.score;
-        players[p].list.push(lvl);
-    }
-}
+        <div class="card">
+            <h3>Points</h3>
+            <h1>308.755</h1>
+        </div>
 
-// -----------------------------
-// SORT PLAYERS
-// -----------------------------
-const sorted = Object.entries(players)
-.sort((a,b)=>b[1].score - a[1].score);
+        <div class="card">
+            <h3>Completions</h3>
+            <h1>72</h1>
+        </div>
 
-// -----------------------------
-// RENDER
-// -----------------------------
-const app = document.getElementById("app");
+    </div>
 
-sorted.forEach(([name,data],i)=>{
+    <div class="progress-section">
+        <h2>Leaderboard Progress</h2>
 
-    const card = document.createElement("div");
-    card.className = "card";
+        <div class="progress-bar">
+            <div class="progress-fill" style="width:100%"></div>
+        </div>
 
-    const hardest = data.list.reduce((a,b)=>a.score>b.score?a:b);
+        <p>308.755 / 308.755 Points</p>
+    </div>
 
-    card.innerHTML = `
-        <h2>${i+1}. ${name}</h2>
-        <div class="rank">#${i+1}</div>
-
-        <p><strong>Total Score:</strong> ${data.score.toFixed(3)}</p>
-        <p><strong>Hardest Level:</strong> ${hardest.title}</p>
-        <p><strong>Completions:</strong> ${data.list.length}</p>
-
-        <h3>Completion Breakdown</h3>
-        <ul>
-            ${data.list.map(l=>
-                `<li class="${getDifficultyClass(l.difficulty)}">${l.title}</li>`
-            ).join("")}
+    <div class="section">
+        <h2>Extreme Demons</h2>
+        <ul class="demon-list">
+            <li class="extreme">Acu</li>
         </ul>
-    `;
+    </div>
 
-    app.appendChild(card);
-});
+    <div class="section">
+        <h2>Insane Demons</h2>
+        <ul class="demon-list">
+            <li class="insane">Windy Landscape</li>
+            <li class="insane">Magma Bound</li>
+            <li class="insane">CraZy II</li>
+        </ul>
+    </div>
 
-</script>
+    <div class="section">
+        <h2>Hard Demons</h2>
+        <ul class="demon-list">
+            <li class="hard">Fairydust</li>
+            <li class="hard">Future Funk</li>
+            <li class="hard">Nine Circles</li>
+            <li class="hard">Jawbreaker</li>
+            <li class="hard">Paracosm Circles</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Medium Demons</h2>
+        <ul class="demon-list">
+            <li class="medium">Troll Madness</li>
+            <li class="medium">VeritY</li>
+            <li class="medium">Skeletal Shenanigans</li>
+            <li class="medium">Zom B</li>
+            <li class="medium">B</li>
+            <li class="medium">Cryostatic</li>
+            <li class="medium">Zip Zoom</li>
+            <li class="medium">Living Open</li>
+            <li class="medium">Neon City</li>
+            <li class="medium">Theory of Jumping</li>
+            <li class="medium">Sidestep</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Easy Demons</h2>
+        <ul class="demon-list">
+            <li class="easy">Extinction</li>
+            <li class="easy">DeCode</li>
+            <li class="easy">Traction</li>
+            <li class="easy">Death Moon</li>
+            <li class="easy">Problematic</li>
+            <li class="easy">X</li>
+            <li class="easy">Retro Circles</li>
+            <li class="easy">Submerged</li>
+            <li class="easy">Ruined Planet</li>
+            <li class="easy">Clutterfunk v2</li>
+            <li class="easy">Invisible Clubstep</li>
+            <li class="easy">Depressure</li>
+            <li class="easy">Shanty</li>
+            <li class="easy">Sky Realm</li>
+            <li class="easy">Ultra Paracosm</li>
+            <li class="easy">PXTTXRN SXXKXR</li>
+            <li class="easy">Theory of Every v2</li>
+            <li class="easy">Infinite Circles</li>
+            <li class="easy">RECLUSE</li>
+            <li class="easy">Blue Hell</li>
+            <li class="easy">Hold On</li>
+            <li class="easy">Equinox</li>
+            <li class="easy">iSpyWithMyLittleEye</li>
+            <li class="easy">TheRealSalad</li>
+            <li class="easy">yStep</li>
+            <li class="easy">Crescendo</li>
+            <li class="easy">Square Dash</li>
+            <li class="easy">STRANDED</li>
+            <li class="easy">Impulse</li>
+            <li class="easy">Xstep v2</li>
+            <li class="easy">Lights And Thunder</li>
+            <li class="easy">Permafrost Mountain</li>
+            <li class="easy">Level</li>
+            <li class="easy">Petal Patch</li>
+            <li class="easy">Down Unda</li>
+            <li class="easy">iS</li>
+            <li class="easy">Subterra</li>
+            <li class="easy">phjork</li>
+            <li class="easy">red alert</li>
+            <li class="easy">Shiver</li>
+            <li class="easy">Demon Jumper</li>
+            <li class="easy">Interlapse</li>
+            <li class="easy">Platinum Adventure</li>
+            <li class="easy">Demon Mixed</li>
+            <li class="easy">The Lightning Road</li>
+            <li class="easy">The Nightmare</li>
+        </ul>
+    </div>
+
+</div>
 
 </body>
 </html>
