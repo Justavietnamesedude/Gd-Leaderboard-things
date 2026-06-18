@@ -1,317 +1,165 @@
-```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>imTreeJay</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
-    font-family:Arial,sans-serif;
-    background:#111827;
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#111;
     color:white;
-}
-
-.container{
-    display:flex;
-    min-height:100vh;
 }
 
 .sidebar{
-    width:300px;
-    background:#0f172a;
-    padding:25px;
-    border-right:2px solid #1e293b;
+    position:fixed;
+    left:0;
+    top:0;
+    width:220px;
+    height:100%;
+    background:#1b1b1b;
+    padding:20px;
+    box-sizing:border-box;
 }
 
-.rank-badge{
-    width:120px;
-    height:120px;
-    margin:auto;
-    border-radius:50%;
-    background:linear-gradient(135deg,#ffd700,#ffb700);
-    color:black;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:42px;
-    font-weight:bold;
+.sidebar h2{
+    margin-top:0;
+    color:#ffd700;
 }
 
-.player-name{
-    text-align:center;
-    margin-top:20px;
-    font-size:32px;
-    font-weight:bold;
+.sidebar a{
+    color:white;
+    text-decoration:none;
 }
 
-.sidebar-card{
-    background:#1f2937;
-    border-radius:10px;
-    padding:15px;
-    margin-top:20px;
-}
-
-.main{
-    flex:1;
+.content{
+    margin-left:240px;
     padding:30px;
 }
 
-.top-cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
-    margin-bottom:25px;
+.profile{
+    background:#1a1a1a;
+    padding:25px;
+    border-radius:12px;
 }
 
-.stat-card{
-    background:#1f2937;
-    border-radius:10px;
-    padding:20px;
-}
-
-.stat-card h2{
-    color:#9ca3af;
-    font-size:14px;
-    margin-bottom:8px;
-}
-
-.value{
-    font-size:30px;
+.rank{
+    display:inline-block;
+    background:#ffd700;
+    color:black;
+    padding:8px 16px;
+    border-radius:8px;
     font-weight:bold;
 }
 
-.score{color:#22c55e;}
-.points{color:#60a5fa;}
+.extreme { color:#6e0101; }
+.insane { color:#bb0101; }
+.hard { color:#fd342f; }
+.medium { color:#d243ff; }
+.easy { color:#9a44ff; }
+.main-demon { color:#a100a1; }
 
-.section{
-    background:#1f2937;
-    border-radius:10px;
-    padding:20px;
-    margin-bottom:20px;
-}
-
-.section h2{
-    margin-bottom:15px;
-}
-
-.demon{
-    padding:8px;
-    border-bottom:1px solid #374151;
-}
-
-.extreme{color:#6e0101;font-weight:bold;}
-.insane{color:#bb0101;font-weight:bold;}
-.hard{color:#fd342f;font-weight:bold;}
-.medium{color:#d243ff;font-weight:bold;}
-.easy{color:#9a44ff;font-weight:bold;}
-.main-demon{color:#a100a1;font-weight:bold;}
-
-.progress{
-    background:#374151;
-    height:16px;
-    border-radius:8px;
-    overflow:hidden;
-    margin-bottom:12px;
-}
-
-.fill{
-    height:100%;
-}
-
-.back-btn{
-    display:inline-block;
-    padding:10px 15px;
-    background:#2563eb;
-    color:white;
-    text-decoration:none;
-    border-radius:8px;
-    margin-top:20px;
+ul{
+    columns:2;
 }
 </style>
 </head>
-
 <body>
 
-<div class="container">
-
 <div class="sidebar">
-
-<div class="rank-badge">#1</div>
-
-<div class="player-name">
-imTreeJay
+    <h2>GD Leaderboard</h2>
+    <a href="index.html">← Back to Leaderboard</a>
 </div>
 
-<div class="sidebar-card">
-<h3>Hardest Demon</h3>
-<p class="extreme">Acu</p>
-</div>
+<div class="content">
+    <div class="profile">
+        <h1>imTreeJay</h1>
 
-<div class="sidebar-card">
-<h3>Statistics</h3>
-<p>Score: 77.33</p>
-<p>Points: 77.33</p>
-<p>Total Demons: 69</p>
-</div>
+        <div class="rank">#1</div>
 
-<a href="index.html" class="back-btn">← Back</a>
+        <p><strong>GDDL Score:</strong> 308.755</p>
+        <p><strong>Hardest Demon:</strong> <span class="extreme">Acu</span></p>
+        <p><strong>Demons Completed:</strong> 72</p>
 
-</div>
+        <h2>Completed Demons</h2>
 
-<div class="main">
-
-<div class="top-cards">
-
-<div class="stat-card">
-<h2>SCORE</h2>
-<div class="value score">77.33</div>
-</div>
-
-<div class="stat-card">
-<h2>POINTS</h2>
-<div class="value points">77.33</div>
-</div>
-
-<div class="stat-card">
-<h2>RANK</h2>
-<div class="value">#1</div>
-</div>
-
-<div class="stat-card">
-<h2>DEMONS</h2>
-<div class="value">69</div>
-</div>
-
-</div>
-
-<div class="section">
-<h2>Completion Breakdown</h2>
-
-<p class="extreme">Extreme Demons (1)</p>
-<div class="progress"><div class="fill" style="width:1%;background:#6e0101;"></div></div>
-
-<p class="insane">Insane Demons (7)</p>
-<div class="progress"><div class="fill" style="width:10%;background:#bb0101;"></div></div>
-
-<p class="hard">Hard Demons (5)</p>
-<div class="progress"><div class="fill" style="width:8%;background:#fd342f;"></div></div>
-
-<p class="medium">Medium Demons (16)</p>
-<div class="progress"><div class="fill" style="width:23%;background:#d243ff;"></div></div>
-
-<p class="easy">Easy Demons (40)</p>
-<div class="progress"><div class="fill" style="width:58%;background:#9a44ff;"></div></div>
-</div>
-
-<div class="section">
-<h2 class="extreme">Extreme Demons</h2>
-<div class="demon"><span class="extreme">Acu</span> — 20.25 pts</div>
-</div>
-
-<div class="section">
-<h2 class="insane">Insane Demons</h2>
-<div class="demon"><span class="insane">Windy Landscape</span> — 15.75 pts</div>
-<div class="demon"><span class="insane">Magma Bound</span> — 15.74 pts</div>
-<div class="demon"><span class="insane">CraZy II</span> — 15.33 pts</div>
-<div class="demon"><span class="insane">Fairydust</span></div>
-<div class="demon"><span class="insane">Future Funk</span></div>
-<div class="demon"><span class="insane">Nine Circles</span></div>
-<div class="demon"><span class="insane">Jawbreaker</span></div>
-</div>
-
-<div class="section">
-<h2 class="hard">Hard Demons</h2>
-<div class="demon"><span class="hard">Troll Madness</span></div>
-<div class="demon"><span class="hard">VeritY</span></div>
-<div class="demon"><span class="hard">Skeletal Shenanigans</span></div>
-<div class="demon"><span class="hard">Zom B</span></div>
-<div class="demon"><span class="hard">Paracosm Circles</span></div>
-</div>
-
-<div class="section">
-<h2 class="medium">Medium Demons</h2>
-<div class="demon"><span class="medium">B</span></div>
-<div class="demon"><span class="medium">Cryostatic</span></div>
-<div class="demon"><span class="medium">Zip Zoom</span></div>
-<div class="demon"><span class="medium">Living Open</span></div>
-<div class="demon"><span class="medium">Neon City</span></div>
-<div class="demon"><span class="medium">Theory of Jumping</span></div>
-<div class="demon"><span class="medium">Sidestep</span></div>
-<div class="demon"><span class="main-demon">Deadlocked</span></div>
-<div class="demon"><span class="medium">Extinction</span></div>
-<div class="demon"><span class="medium">DeCode</span></div>
-<div class="demon"><span class="medium">Traction</span></div>
-<div class="demon"><span class="medium">Death Moon</span></div>
-<div class="demon"><span class="medium">Problematic</span></div>
-<div class="demon"><span class="medium">X</span></div>
-<div class="demon"><span class="medium">Retro Circles</span></div>
-<div class="demon"><span class="main-demon">Clubstep</span></div>
-</div>
-
-<div class="section">
-<h2 style="color:#a100a1;">Official Demons</h2>
-<div class="demon"><span class="main-demon">Clubstep</span></div>
-<div class="demon"><span class="main-demon">Deadlocked</span></div>
-</div>
-
-<div class="section">
-<h2 class="easy">Easy Demons</h2>
-
-<div class="demon"><span class="easy">Submerged</span></div>
-<div class="demon"><span class="easy">Ruined Planet</span></div>
-<div class="demon"><span class="easy">Clutterfunk v2</span></div>
-<div class="demon"><span class="easy">Invisible Clubstep</span></div>
-<div class="demon"><span class="easy">Depressure</span></div>
-<div class="demon"><span class="easy">Shanty</span></div>
-<div class="demon"><span class="easy">Sky Realm</span></div>
-<div class="demon"><span class="easy">Ultra Paracosm</span></div>
-<div class="demon"><span class="easy">PXTTXRN SXXKXR</span></div>
-<div class="demon"><span class="easy">Theory of Every v2</span></div>
-<div class="demon"><span class="easy">Infinite Circles</span></div>
-<div class="demon"><span class="easy">RECLUSE</span></div>
-<div class="demon"><span class="easy">Blue Hell</span></div>
-<div class="demon"><span class="easy">Hold On</span></div>
-<div class="demon"><span class="easy">Equinox</span></div>
-<div class="demon"><span class="easy">iSpyWithMyLittleEye</span></div>
-<div class="demon"><span class="easy">TheRealSalad</span></div>
-<div class="demon"><span class="easy">yStep</span></div>
-<div class="demon"><span class="easy">Crescendo</span></div>
-<div class="demon"><span class="easy">Square Dash</span></div>
-<div class="demon"><span class="easy">STRANDED</span></div>
-<div class="demon"><span class="easy">Impulse</span></div>
-<div class="demon"><span class="easy">Xstep v2</span></div>
-<div class="demon"><span class="easy">Lights And Thunder</span></div>
-<div class="demon"><span class="easy">Permafrost Mountain</span></div>
-<div class="demon"><span class="easy">Level</span></div>
-<div class="demon"><span class="easy">Petal Patch</span></div>
-<div class="demon"><span class="easy">Down Unda</span></div>
-<div class="demon"><span class="easy">iS</span></div>
-<div class="demon"><span class="easy">Subterra</span></div>
-<div class="demon"><span class="easy">ABCDEFGHIJKLMNOPQRS</span></div>
-<div class="demon"><span class="easy">dorabaedifficult4</span></div>
-<div class="demon"><span class="easy">phjork</span></div>
-<div class="demon"><span class="easy">Ruins of Destiny</span></div>
-<div class="demon"><span class="easy">red alert</span></div>
-<div class="demon"><span class="easy">Shiver</span></div>
-<div class="demon"><span class="easy">Demon Jumper</span></div>
-<div class="demon"><span class="easy">Interlapse</span></div>
-<div class="demon"><span class="easy">Platinum Adventure</span></div>
-<div class="demon"><span class="easy">Demon Mixed</span></div>
-<div class="demon"><span class="easy">The Lightning Road</span></div>
-<div class="demon"><span class="easy">The Nightmare</span></div>
-
-</div>
-
-</div>
+        <ul>
+            <li class="extreme">Acu</li>
+            <li class="insane">Windy Landscape</li>
+            <li class="insane">Magma Bound</li>
+            <li class="insane">CraZy II</li>
+            <li class="hard">Fairydust</li>
+            <li class="hard">Future Funk</li>
+            <li class="hard">Nine Circles</li>
+            <li class="hard">Jawbreaker</li>
+            <li class="medium">Troll Madness</li>
+            <li class="medium">VeritY</li>
+            <li class="medium">Skeletal Shenanigans</li>
+            <li class="medium">Zom B</li>
+            <li class="hard">Paracosm Circles</li>
+            <li class="medium">B</li>
+            <li class="medium">Cryostatic</li>
+            <li class="medium">Zip Zoom</li>
+            <li class="medium">Living Open</li>
+            <li class="medium">Neon City</li>
+            <li class="medium">Theory of Jumping</li>
+            <li class="medium">Sidestep</li>
+            <li class="main-demon">Deadlocked</li>
+            <li class="medium">Extinction</li>
+            <li class="easy">DeCode</li>
+            <li class="easy">Traction</li>
+            <li class="easy">Death Moon</li>
+            <li class="easy">Problematic</li>
+            <li class="easy">X</li>
+            <li class="easy">Retro Circles</li>
+            <li class="main-demon">Clubstep</li>
+            <li class="easy">Submerged</li>
+            <li class="easy">Ruined Planet</li>
+            <li class="easy">Clutterfunk v2</li>
+            <li class="easy">Invisible Clubstep</li>
+            <li class="easy">Depressure</li>
+            <li class="easy">Shanty</li>
+            <li class="easy">Sky Realm</li>
+            <li class="easy">Ultra Paracosm</li>
+            <li class="easy">PXTTXRN SXXKXR</li>
+            <li class="easy">Theory of Every v2</li>
+            <li class="easy">Infinite Circles</li>
+            <li class="easy">RECLUSE</li>
+            <li class="easy">Blue Hell</li>
+            <li class="easy">Hold On</li>
+            <li class="easy">Equinox</li>
+            <li class="easy">iSpyWithMyLittleEye</li>
+            <li class="easy">TheRealSalad</li>
+            <li class="easy">yStep</li>
+            <li class="easy">Crescendo</li>
+            <li class="easy">Square Dash</li>
+            <li class="easy">STRANDED</li>
+            <li class="easy">Impulse</li>
+            <li class="easy">Xstep v2</li>
+            <li class="easy">Lights And Thunder</li>
+            <li class="easy">Permafrost Mountain</li>
+            <li class="easy">Level</li>
+            <li class="easy">Petal Patch</li>
+            <li class="easy">Down Unda</li>
+            <li class="easy">iS</li>
+            <li class="easy">Subterra</li>
+            <li class="easy">ABCDEFGHIJKLMNOPQRS</li>
+            <li class="easy">dorabaedifficult4</li>
+            <li class="easy">phjork</li>
+            <li class="easy">Ruins of Destiny</li>
+            <li class="easy">red alert</li>
+            <li class="easy">Shiver</li>
+            <li class="easy">Demon Jumper</li>
+            <li class="easy">Interlapse</li>
+            <li class="easy">Platinum Adventure</li>
+            <li class="easy">Demon Mixed</li>
+            <li class="easy">The Lightning Road</li>
+            <li class="easy">The Nightmare</li>
+        </ul>
+    </div>
 </div>
 
 </body>
 </html>
-```
