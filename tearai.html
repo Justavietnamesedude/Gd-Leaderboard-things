@@ -1,15 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Tearai</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tearai - GD Profile</title>
+
 <style>
-body{font-family:Arial,sans-serif;background:#142033;color:white;padding:20px;}
-.card{background:#223758;padding:20px;border-radius:10px;margin:10px 0;}
+body{margin:0;font-family:Arial;background:#111;color:white;}
+
+.sidebar{
+position:fixed;left:0;top:0;width:220px;height:100%;
+background:#181818;border-right:2px solid #333;padding:20px;
+}
+
+.sidebar h2{color:#ffd700;margin-top:0;}
+.sidebar a{color:white;display:block;margin:10px 0;text-decoration:none;}
+
+.main{margin-left:260px;padding:30px;}
+
+.profile-header{display:flex;gap:20px;align-items:center;}
+
+.rank-badge{
+width:100px;height:100px;border-radius:50%;
+background:gold;color:black;
+display:flex;align-items:center;justify-content:center;
+font-size:36px;font-weight:bold;
+}
+
+.cards{display:flex;gap:20px;margin:20px 0;}
+
+.card{background:#1b1b1b;padding:20px;border-radius:10px;border:1px solid #333;}
+
+.card h3{color:#ffd700;}
+
+.section{margin-top:30px;}
+
+.demon-list{columns:2;}
+
+.extreme{color:#6e0101;font-weight:bold;}
+.insane{color:#bb0101;font-weight:bold;}
+.hard{color:#fd342f;font-weight:bold;}
+.medium{color:#d243ff;font-weight:bold;}
+.easy{color:#9a44ff;font-weight:bold;}
+.main-demon{color:#a100a1;font-weight:bold;}
 </style>
 </head>
+
 <body>
+
+<div class="sidebar">
+<h2>GD Leaderboard</h2>
+<a href="index.html">Leaderboard</a>
+</div>
+
+<div class="main">
+
+<div class="profile-header">
+<div class="rank-badge">#5</div>
+
+<div>
 <h1>Tearai</h1>
-<div class="card">Placeholder page for Tearai. You can customize it further.</div>
+<p>Hardest: Future Funk</p>
+</div>
+</div>
+
+<div class="cards">
+<div class="card"><h3>Score</h3><h1>35.240</h1></div>
+<div class="card"><h3>Points</h3><h1>35.240</h1></div>
+<div class="card"><h3>Completions</h3><h1>3</h1></div>
+</div>
+
+<div class="section">
+<h2>Completion Breakdown</h2>
+<ul class="demon-list">
+<li class="hard">Future Funk</li>
+<li class="hard">Nine Circles</li>
+<li class="hard">Jawbreaker</li>
+</ul>
+</div>
+
+</div>
 </body>
 </html>
