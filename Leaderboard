@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demon List</title>
+
+<style>
+:root{
+--bg:#0d0d0d;
+--panel:#181818;
+--accent:#ffae00;
+--text:#ffffff;
+--sub:#aaaaaa;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+font-family:Arial, Helvetica, sans-serif;
+}
+
+header{
+background:#111;
+padding:25px;
+border-bottom:3px solid var(--accent);
+}
+
+header h1{
+color:var(--accent);
+font-size:40px;
+}
+
+.container{
+width:95%;
+max-width:1500px;
+margin:auto;
+padding:20px;
+}
+
+.search{
+width:100%;
+padding:14px;
+background:#1c1c1c;
+color:white;
+border:1px solid #444;
+margin-bottom:20px;
+}
+
+.list-entry{
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:var(--panel);
+border-left:4px solid var(--accent);
+margin-bottom:8px;
+padding:15px;
+}
+
+.rank{
+width:90px;
+font-size:32px;
+font-weight:bold;
+color:var(--accent);
+}
+
+.main{
+flex:1;
+}
+
+.level{
+font-size:24px;
+font-weight:bold;
+}
+
+.creator{
+color:var(--sub);
+margin-top:4px;
+}
+
+.badge{
+display:inline-block;
+padding:4px 8px;
+margin-top:6px;
+border-radius:4px;
+font-size:12px;
+font-weight:bold;
+}
+
+.extreme{background:#8b0000;}
+.insane{background:#7a2cff;}
+.hard{background:#ff6a00;}
+.medium{background:#0066ff;}
+.easy{background:#00aa44;}
+.robtop{background:#00cccc;}
+
+.score{
+text-align:right;
+min-width:140px;
+}
+
+.score-value{
+font-size:28px;
+font-weight:bold;
+}
+
+.points{
+color:#ccc;
+margin-top:4px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Accomplishments List</h1>
+</header>
+
+<div class="container">
+
+<input class="search" placeholder="Search levels...">
+
+<div class="list-entry">
+<div class="rank">#1</div>
+<div class="main">
+<div class="level">Bloodbath</div>
+<div class="creator">by Riot</div>
+<div class="badge extreme">Extreme Demon</div>
+</div>
+<div class="score">
+<div class="score-value">109.04</div>
+<div class="points">23.99 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#2</div>
+<div class="main">
+<div class="level">Acu</div>
+<div class="creator">by neigefeu</div>
+<div class="badge extreme">Extreme Demon</div>
+</div>
+<div class="score">
+<div class="score-value">77.33</div>
+<div class="points">20.25 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#3</div>
+<div class="main">
+<div class="level">Red World</div>
+<div class="creator">by saRy</div>
+<div class="badge extreme">Extreme Demon</div>
+</div>
+<div class="score">
+<div class="score-value">76.85</div>
+<div class="points">20.14 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#4</div>
+<div class="main">
+<div class="level">Windy Landscape</div>
+<div class="creator">by WOOGI1411</div>
+<div class="badge insane">Insane Demon</div>
+</div>
+<div class="score">
+<div class="score-value">63.77</div>
+<div class="points">15.75 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#5</div>
+<div class="main">
+<div class="level">Magma Bound</div>
+<div class="creator">by ScorchVX</div>
+<div class="badge insane">Insane Demon</div>
+</div>
+<div class="score">
+<div class="score-value">63.74</div>
+<div class="points">15.74 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#6</div>
+<div class="main">
+<div class="level">CraZy II</div>
+<div class="creator">by DavJT</div>
+<div class="badge insane">Insane Demon</div>
+</div>
+<div class="score">
+<div class="score-value">62.50</div>
+<div class="points">15.33 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#7</div>
+<div class="main">
+<div class="level">Fairydust</div>
+<div class="creator">by mkComic</div>
+<div class="badge hard">Hard Demon</div>
+</div>
+<div class="score">
+<div class="score-value">57.49</div>
+<div class="points">13.78 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#8</div>
+<div class="main">
+<div class="level">Future Funk</div>
+<div class="creator">by JonathanGD</div>
+<div class="badge hard">Hard Demon</div>
+</div>
+<div class="score">
+<div class="score-value">54.53</div>
+<div class="points">12.94 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#9</div>
+<div class="main">
+<div class="level">Experiment 204</div>
+<div class="creator">by HHyper</div>
+<div class="badge hard">Hard Demon</div>
+</div>
+<div class="score">
+<div class="score-value">51.14</div>
+<div class="points">12.04 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#10</div>
+<div class="main">
+<div class="level">Water Temple</div>
+<div class="creator">by Michigun</div>
+<div class="badge hard">Hard Demon</div>
+</div>
+<div class="score">
+<div class="score-value">47.91</div>
+<div class="points">11.24 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#11</div>
+<div class="main">
+<div class="level">Nine Circles</div>
+<div class="creator">by Zobros</div>
+<div class="badge hard">Hard Demon</div>
+</div>
+<div class="score">
+<div class="score-value">47.57</div>
+<div class="points">11.16 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#12</div>
+<div class="main">
+<div class="level">Jawbreaker</div>
+<div class="creator">by ZenthicAlpha</div>
+<div class="badge hard">Hard Demon</div>
+</div>
+<div class="score">
+<div class="score-value">47.49</div>
+<div class="points">11.14 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#13</div>
+<div class="main">
+<div class="level">Troll Madness</div>
+<div class="creator">by zyphur</div>
+<div class="badge hard">Hard Demon</div>
+</div>
+<div class="score">
+<div class="score-value">39.70</div>
+<div class="points">9.24 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#14</div>
+<div class="main">
+<div class="level">Fire Temple</div>
+<div class="creator">by Michigun</div>
+<div class="badge medium">Medium Demon</div>
+</div>
+<div class="score">
+<div class="score-value">41.80</div>
+<div class="points">9.87 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#15</div>
+<div class="main">
+<div class="level">Darkness Keeper</div>
+<div class="creator">by AbstractDark</div>
+<div class="badge hard">Hard Demon</div>
+</div>
+<div class="score">
+<div class="score-value">41.46</div>
+<div class="points">9.80 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#16</div>
+<div class="main">
+<div class="level">VeritY</div>
+<div class="creator">by Serponge</div>
+<div class="badge medium">Medium Demon</div>
+</div>
+<div class="score">
+<div class="score-value">36.68</div>
+<div class="points">6.97 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#17</div>
+<div class="main">
+<div class="level">Skeletal Shenanigans</div>
+<div class="creator">by YoReid</div>
+<div class="badge medium">Medium Demon</div>
+</div>
+<div class="score">
+<div class="score-value">36.23</div>
+<div class="points">6.68 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#18</div>
+<div class="main">
+<div class="level">Zom B</div>
+<div class="creator">by Voxicat</div>
+<div class="badge medium">Medium Demon</div>
+</div>
+<div class="score">
+<div class="score-value">36.15</div>
+<div class="points">6.63 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#19</div>
+<div class="main">
+<div class="level">Paracosm Circles</div>
+<div class="creator">by N1XO</div>
+<div class="badge medium">Medium Demon</div>
+</div>
+<div class="score">
+<div class="score-value">35.12</div>
+<div class="points">6.02 pts</div>
+</div>
+</div>
+
+<div class="list-entry">
+<div class="rank">#20</div>
+<div class="main">
+<div class="level">B</div>
+<div class="creator">by Motleyorc</div>
+<div class="badge medium">Medium Demon</div>
+</div>
+<div class="score">
+<div class="score-value">34.74</div>
+<div class="points">5.81 pts</div>
+</div>
+</div>
+
+  <div class="entry">
+    <div class="rank">#21</div>
+    <div class="content">
+        <div class="level">Cryostatic</div>
+        <span class="badge medium">Medium Demon</span>
+        <div class="stats">Score: 33.65 | Points: 5.25</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#22</div>
+    <div class="content">
+        <div class="level">Zip Zoom</div>
+        <span class="badge medium">Medium Demon</span>
+        <div class="stats">Score: 33.63 | Points: 5.24</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#23</div>
+    <div class="content">
+        <div class="level">Living Open</div>
+        <span class="badge medium">Medium Demon</span>
+        <div class="stats">Score: 33.47 | Points: 5.16</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#24</div>
+    <div class="content">
+        <div class="level">Sidestep</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 33.44 | Points: 5.15</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#25</div>
+    <div class="content">
+        <div class="level">Clubstep 2019</div>
+        <span class="badge medium">Medium Demon</span>
+        <div class="stats">Score: 33.38 | Points: 5.12</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#26</div>
+    <div class="content">
+        <div class="level">Neon City</div>
+        <span class="badge medium">Medium Demon</span>
+        <div class="stats">Score: 33.19 | Points: 5.03</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#27</div>
+    <div class="content">
+        <div class="level">Theory of Jumping</div>
+        <span class="badge medium">Medium Demon</span>
+        <div class="stats">Score: 32.62 | Points: 4.77</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#28</div>
+    <div class="content">
+        <div class="level">Deadlocked</div>
+        <span class="badge robtop">RobTop Demon</span>
+        <div class="stats">Score: 32.47 | Points: 4.70</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#29</div>
+    <div class="content">
+        <div class="level">Extinction</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 30.42 | Points: 4.23</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#30</div>
+    <div class="content">
+        <div class="level">DeCode</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 29.75 | Points: 4.12</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#31</div>
+    <div class="content">
+        <div class="level">Traction</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 29.12 | Points: 4.02</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#32</div>
+    <div class="content">
+        <div class="level">Death Moon</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 27.68 | Points: 3.80</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#33</div>
+    <div class="content">
+        <div class="level">Ode to Sunset</div>
+        <span class="badge medium">Medium Demon</span>
+        <div class="stats">Score: 25.14 | Points: 3.44</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#34</div>
+    <div class="content">
+        <div class="level">Problematic</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 22.73 | Points: 3.13</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#35</div>
+    <div class="content">
+        <div class="level">X</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 22.65 | Points: 3.12</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#36</div>
+    <div class="content">
+        <div class="level">Theory of Everything 2</div>
+        <span class="badge robtop">RobTop Demon</span>
+        <div class="stats">Score: 21.99 | Points: 3.04</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#37</div>
+    <div class="content">
+        <div class="level">Retro Circles</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 20.70 | Points: 2.89</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#38</div>
+    <div class="content">
+        <div class="level">Clubstep</div>
+        <span class="badge robtop">RobTop Demon</span>
+        <div class="stats">Score: 20.07 | Points: 2.82</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#39</div>
+    <div class="content">
+        <div class="level">Submerged</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 19.89 | Points: 2.80</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#40</div>
+    <div class="content">
+        <div class="level">Ruined Planet</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 19.89 | Points: 2.80</div>
+    </div>
+</div>
+
+  <div class="entry">
+    <div class="rank">#41</div>
+    <div class="content">
+        <div class="level">Clutterfunk v2</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 18.58 | Points: 2.66</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#42</div>
+    <div class="content">
+        <div class="level">invisible clubstep</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 18.10 | Points: 2.61</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#43</div>
+    <div class="content">
+        <div class="level">Depressure</div>
+        <span class="badge hard">Hard Demon</span>
+        <div class="stats">Score: 12.74 | Points: 2.17</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#44</div>
+    <div class="content">
+        <div class="level">Shanty</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 12.06 | Points: 2.12</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#45</div>
+    <div class="content">
+        <div class="level">Sky Realm</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 11.79 | Points: 2.10</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#46</div>
+    <div class="content">
+        <div class="level">Speed of Light</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 13.14 | Points: 2.20</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#47</div>
+    <div class="content">
+        <div class="level">Ultra Paracosm</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 10.94 | Points: 2.04</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#48</div>
+    <div class="content">
+        <div class="level">PXTTXRN SXXKXR</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 10.94 | Points: 2.04</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#49</div>
+    <div class="content">
+        <div class="level">Theory of every v2</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 10.66 | Points: 2.02</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#50</div>
+    <div class="content">
+        <div class="level">infinite circles</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 9.93 | Points: 1.97</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#51</div>
+    <div class="content">
+        <div class="level">RECLUSE</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 10.08 | Points: 1.98</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#52</div>
+    <div class="content">
+        <div class="level">Super Cycles</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 9.48 | Points: 1.94</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#53</div>
+    <div class="content">
+        <div class="level">Electroman Adven v2</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 9.18 | Points: 1.92</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#54</div>
+    <div class="content">
+        <div class="level">Blue Hell</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 9.03 | Points: 1.91</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#55</div>
+    <div class="content">
+        <div class="level">Hold On</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 9.03 | Points: 1.91</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#56</div>
+    <div class="content">
+        <div class="level">Equinox</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 9.03 | Points: 1.91</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#57</div>
+    <div class="content">
+        <div class="level">iSpyWithMyLittleEye</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 8.41 | Points: 1.87</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#58</div>
+    <div class="content">
+        <div class="level">TheRealSalad</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 8.26 | Points: 1.86</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#59</div>
+    <div class="content">
+        <div class="level">yStep</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 7.46 | Points: 1.81</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#60</div>
+    <div class="content">
+        <div class="level">Crescendo</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 7.46 | Points: 1.81</div>
+    </div>
+</div>
+
+  <div class="entry">
+    <div class="rank">#61</div>
+    <div class="content">
+        <div class="level">Square Dash</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 7.30 | Points: 1.80</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#62</div>
+    <div class="content">
+        <div class="level">STRANDED</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 7.30 | Points: 1.80</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#63</div>
+    <div class="content">
+        <div class="level">Impulse</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 7.30 | Points: 1.80</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#64</div>
+    <div class="content">
+        <div class="level">Xstep v2</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 6.98 | Points: 1.78</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#65</div>
+    <div class="content">
+        <div class="level">The Farewell</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 6.48 | Points: 1.75</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#66</div>
+    <div class="content">
+        <div class="level">ClubstepDynamix</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 4.60 | Points: 1.64</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#67</div>
+    <div class="content">
+        <div class="level">Lights And Thunder</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 4.06 | Points: 1.61</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#68</div>
+    <div class="content">
+        <div class="level">Permafrost Mountain</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 3.88 | Points: 1.60</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#69</div>
+    <div class="content">
+        <div class="level">Level</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 3.33 | Points: 1.57</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#70</div>
+    <div class="content">
+        <div class="level">Locomomentum</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 1.42 | Points: 1.30</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#71</div>
+    <div class="content">
+        <div class="level">Petal Patch</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 1.39 | Points: 1.29</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#72</div>
+    <div class="content">
+        <div class="level">Down Unda</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 1.35 | Points: 1.28</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#73</div>
+    <div class="content">
+        <div class="level">iS</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 1.24 | Points: 1.245</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#74</div>
+    <div class="content">
+        <div class="level">Subterra</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 1.23 | Points: 1.24</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#75</div>
+    <div class="content">
+        <div class="level">ABCDEFGHIJKLMNOPQRS</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 1.09 | Points: 1.20</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#76</div>
+    <div class="content">
+        <div class="level">dorabaedifficult4</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 1.09 | Points: 1.20</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#77</div>
+    <div class="content">
+        <div class="level">phjork</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 1.06 | Points: 1.19</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#78</div>
+    <div class="content">
+        <div class="level">Ruins of Destiny</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 1.09 | Points: 1.20</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#79</div>
+    <div class="content">
+        <div class="level">red alert</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 0.99 | Points: 1.17</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#80</div>
+    <div class="content">
+        <div class="level">Shiver</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 0.92 | Points: 1.15</div>
+    </div>
+</div>
+
+  <div class="entry">
+    <div class="rank">#81</div>
+    <div class="content">
+        <div class="level">Demon jumper</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 0.92 | Points: 1.15</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#82</div>
+    <div class="content">
+        <div class="level">Interlapse</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 0.92 | Points: 1.15</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#83</div>
+    <div class="content">
+        <div class="level">Unite</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 0.88 | Points: 1.14</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#84</div>
+    <div class="content">
+        <div class="level">Platinum Adventure</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 0.85 | Points: 1.13</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#85</div>
+    <div class="content">
+        <div class="level">XYZstep</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 0.77 | Points: 1.11</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#86</div>
+    <div class="content">
+        <div class="level">Demon Mixed</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 0.74 | Points: 1.10</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#87</div>
+    <div class="content">
+        <div class="level">Sea Hunter</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 0.55 | Points: 1.05</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#88</div>
+    <div class="content">
+        <div class="level">The Lightning Road</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 0.55 | Points: 1.05</div>
+    </div>
+</div>
+
+<div class="entry">
+    <div class="rank">#89</div>
+    <div class="content">
+        <div class="level">The Nightmare</div>
+        <span class="badge easy">Easy Demon</span>
+        <div class="stats">Score: 0.51 | Points: 1.04</div>
+    </div>
+</div>
+
+<!-- End of Accomplishments List -->
+</div>
+
+<script>
+const search = document.getElementById('search');
+search.addEventListener('input', function() {
+    const value = this.value.toLowerCase();
+    document.querySelectorAll('.entry').forEach(entry => {
+        const text = entry.textContent.toLowerCase();
+        entry.style.display = text.includes(value) ? 'flex' : 'none';
+    });
+});
+</script>
+
+</body>
+</html>
+  
