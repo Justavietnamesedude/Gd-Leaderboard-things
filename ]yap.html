@@ -1150,22 +1150,12 @@ margin-top:4px;
 </div>
 
 <script>
-const search = document.getElementById('search');
-search.addEventListener('input', function() {
-    const value = this.value.toLowerCase();
-    document.querySelectorAll('.entry').forEach(entry => {
-        const text = entry.textContent.toLowerCase();
-        entry.style.display = text.includes(value) ? 'flex' : 'none';
-    });
-});
-<script>
-const searchBox = document.getElementById("searchBox");
+const search = document.querySelector(".search");
 
-searchBox.addEventListener("keyup", function () {
+search.addEventListener("input", function () {
     const value = this.value.toLowerCase();
-    const entries = document.querySelectorAll(".list-entry");
 
-    entries.forEach(entry => {
+    document.querySelectorAll(".list-entry").forEach(entry => {
         const text = entry.innerText.toLowerCase();
 
         if (text.includes(value)) {
@@ -1176,7 +1166,6 @@ searchBox.addEventListener("keyup", function () {
     });
 });
 </script>
-
 </body>
 </html>
   
