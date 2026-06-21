@@ -131,8 +131,8 @@ margin-top:4px;
 
 <div class="container">
 
-<input class="search" placeholder="Search levels...">
-
+<input id="searchBox" class="search" placeholder="Search levels...">
+    
 <div class="list-entry">
 <div class="rank">#1</div>
 <div class="main">
@@ -1156,6 +1156,23 @@ search.addEventListener('input', function() {
     document.querySelectorAll('.entry').forEach(entry => {
         const text = entry.textContent.toLowerCase();
         entry.style.display = text.includes(value) ? 'flex' : 'none';
+    });
+});
+<script>
+const searchBox = document.getElementById("searchBox");
+
+searchBox.addEventListener("keyup", function () {
+    const value = this.value.toLowerCase();
+    const entries = document.querySelectorAll(".list-entry");
+
+    entries.forEach(entry => {
+        const text = entry.innerText.toLowerCase();
+
+        if (text.includes(value)) {
+            entry.style.display = "flex";
+        } else {
+            entry.style.display = "none";
+        }
     });
 });
 </script>
